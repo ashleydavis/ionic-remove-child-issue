@@ -1,0 +1,7 @@
+{
+  "name": "ionic-remove-child-issue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
