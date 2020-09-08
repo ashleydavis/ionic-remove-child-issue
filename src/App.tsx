@@ -45,7 +45,6 @@ export class App extends React.Component<{}, {}> {
                         path="/edit-library/:id" 
                         render={props => 
                             <EditLibraryScreen 
-                                key={props.match.params.id}
                                 />
                         } 
                         exact={false}

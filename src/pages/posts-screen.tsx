@@ -1,7 +1,9 @@
 import React from 'react';
 import { IonContent, IonPage, IonList, IonItem } from '@ionic/react';
+import Post from './post';
+import { withRouter, RouteComponentProps } from 'react-router';
 
-export interface IPostsScreenProps {
+export interface IPostsScreenProps extends RouteComponentProps<{id: string}> {
 }
 
 export interface IPostsScreenState {
@@ -18,19 +20,10 @@ class PostsScreen extends React.Component<IPostsScreenProps, IPostsScreenState> 
     render() {
         return (
             <IonPage>
-                <IonContent>
-                    <IonList>
-                        <IonItem
-                            routerLink="/edit-library/test2/posts"
-                            detail={false}
-                            >
-                            Click me to trigger the problem
-                        </IonItem>
-                    </IonList>
-                </IonContent>
+                <Post key={this.props.match.params.id} />
             </IonPage>
         );
     }
 }
 
-export default PostsScreen;
+export default withRouter(PostsScreen);
